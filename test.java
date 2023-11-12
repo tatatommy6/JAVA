@@ -1,31 +1,23 @@
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
+import javax.swing.*;
+import java.awt.*;
+public class test  extends JFrame{
+    public test() {
+        setTitle("FlowLayout Sample");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Container c = getContentPane();
 
-public class test {
+        //컨텐트판에 FlowLayout 배치 관리자 생성
+        c.setLayout(new FlowLayout(FlowLayout.LEFT,30,40));
+        c.add(new JButton("add"));
+        c.add(new JButton("sub"));
+        c.add(new JButton("mul"));
+        c.add(new JButton("div"));
+        c.add(new JButton("Calculate"));
+
+        setSize(300,300);
+        setVisible(true);;
+    }
     public static void main(String[] args) {
-        File f=null;
-        FileWriter fw=null;
-        Scanner sc=new Scanner(System.in);
-        System.out.println("전화번호 입력 프로그램입니다.");
-        String temp="";
-        try {
-            f=new File("C://Users//tatat//Desktop//phone.txt");
-            fw=new FileWriter(f);
-            int c;
-            while(true) {
-                System.out.print("이름 전화번호 >> ");
-                temp=sc.nextLine();
-                if(temp.equals("그만")) {
-                    break;
-                }
-                fw.write(temp+"\r\n");
-            }
-        } catch (IOException e) {
-            // TODO: handle exception
-            e.printStackTrace();
-        }
-        System.out.println(f.getPath()+"에 저장하였습니다.");
+        new test();
     }
 }
