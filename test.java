@@ -15,7 +15,7 @@ public class test  extends JFrame{
         c.add(new JButton("Calculate"));
 
         setSize(300,300);
-        setVisible(true);;
+        setVisible(true);
     }
     public static void main(String[] args) {
         new test();
