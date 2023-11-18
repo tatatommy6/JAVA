@@ -2,21 +2,20 @@ import javax.swing.*;
 import java.awt.*;
 public class test extends JFrame{
     public test(){
-        setTitle("gridlayout sample");
+        setTitle("null container sample");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        GridLayout gr=new GridLayout(4,2);
-        gr.setVgap(5);
         Container c=getContentPane();
-        c.setLayout(gr);
-        c.add(new JLabel("이름"));
-        c.add(new JTextField(""));
-        c.add(new JLabel("학번"));
-        c.add(new JTextField(""));
-        c.add(new JLabel("학과"));
-        c.add(new JTextField(""));
-        c.add(new JLabel("과목"));
-        c.add(new JTextField(""));
-
+        c.setLayout(null);
+        JLabel la=new JLabel("hello press buttons!");
+        la.setLocation(130,50);
+        la.setSize(200,20);
+        c.add(la);
+        for (int i=1;i<=9;i++){
+            JButton b=new JButton(Integer.toString(i));
+            b.setLocation(i*15,i*15);
+            b.setSize(50,20);
+            c.add(b);
+        }
         setSize(300,200);
         setVisible(true);
     }
